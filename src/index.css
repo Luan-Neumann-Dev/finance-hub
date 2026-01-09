@@ -1,0 +1,154 @@
+/* Tailwind v4 */
+@import "tailwindcss";
+
+/* Dark mode via class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   THEME (ex-tailwind.config)
+   ========================= */
+@theme {
+  /* Colors */
+  --background: 30 20% 98%;
+  --foreground: 220 20% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 20% 15%;
+
+  --primary: 24 100% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 30 15% 95%;
+  --secondary-foreground: 220 20% 25%;
+
+  --muted: 30 10% 93%;
+  --muted-foreground: 220 10% 45%;
+
+  --accent: 24 90% 95%;
+  --accent-foreground: 24 100% 40%;
+
+  --success: 142 70% 45%;
+  --success-foreground: 0 0% 100%;
+
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 30 15% 88%;
+  --input: 30 15% 88%;
+  --ring: 24 100% 50%;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Animations */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+@layer utilities {
+  /* Radius helpers */
+  .rounded-lg {
+    border-radius: var(--radius);
+  }
+
+  .rounded-md {
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .rounded-sm {
+    border-radius: calc(var(--radius) - 4px);
+  }
+
+  /* Animations */
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out forwards;
+  }
+
+  /* Cards */
+  .glass-card {
+    background-color: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    background: linear-gradient(
+      135deg,
+      hsl(24 100% 50%) 0%,
+      hsl(30 100% 55%) 100%
+    );
+  }
+
+  .gradient-success {
+    background: linear-gradient(
+      135deg,
+      hsl(142 70% 45%) 0%,
+      hsl(150 65% 50%) 100%
+    );
+  }
+
+  /* Shadows */
+  .shadow-card {
+    box-shadow: 0 4px 16px -4px hsl(220 20% 15% / 0.06);
+  }
+
+  .shadow-primary {
+    box-shadow: 0 8px 24px -8px hsl(24 100% 50% / 0.12);
+  }
+}
