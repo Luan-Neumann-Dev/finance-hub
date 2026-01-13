@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import { Incomes } from './pages/Incomes';
+import { Expenses } from './pages/Expenses';
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { token, isLoading } = useAuth();
@@ -33,6 +34,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Incomes />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/expenses"
+            element={
+              <PrivateRoute>
+                <Expenses />
               </PrivateRoute>
             }
           />

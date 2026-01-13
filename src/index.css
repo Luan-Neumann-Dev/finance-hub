@@ -158,6 +158,14 @@
   .text-accent-foreground {
     color: hsl(var(--color-accent-foreground));
   }
+
+  .hover\:bg-accent:hover {
+    background-color: hsl(var(--color-accent)) !important;
+  }
+
+  .hover\:text-accent-foreground:hover {
+    color: hsl(var(--color-accent-foreground)) !important;
+  }
   
   .text-destructive {
     color: hsl(var(--color-destructive));
@@ -197,6 +205,10 @@
 
   .border-success\/20 {
     border-color: hsl(var(--color-success) / 0.2);
+  }
+
+  .border-destructive\/20 {
+    border-color: hsl(var(--color-destructive) / 0.2);
   }
 
   /* Radius helpers */
