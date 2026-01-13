@@ -15,8 +15,8 @@ import { useAuth } from '../../contexts/AuthContext';
 import { Button } from '../ui/Button';
 
 const navItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', path: '/' },
-  { icon: Wallet, label: 'Receitas', path: '/receitas' },
+  { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
+  { icon: Wallet, label: 'Receitas', path: '/incomes' },
   { icon: CreditCard, label: 'Despesas', path: '/despesas' },
   { icon: PiggyBank, label: 'Porquinhos', path: '/porquinhos' },
   { icon: BarChart3, label: 'Relatórios', path: '/relatorios' },
@@ -62,7 +62,7 @@ export const Sidebar = () => {
                 <Wallet className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="font-bold text-lg text-foreground">Seu Dinheiro Claro</h1>
+                <h1 className="font-bold text-lg text-foreground">Finance Hub</h1>
                 <p className="text-xs text-muted-foreground">Controle Financeiro</p>
               </div>
             </div>
