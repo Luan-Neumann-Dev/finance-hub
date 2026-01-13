@@ -38,3 +38,26 @@ export interface User {
     bank: string;
     balance: number;
   }
+
+  export interface PiggyTransaction {
+    id: number;
+    piggy_bank_id: number;
+    amount: number;
+    type: 'deposit' | 'withdrawal';
+    date: string;
+    description?: string;
+  }
+
+  export const DEFAULT_BANKS = [
+    'Inter',
+    'Nubank',
+    'XP Investimentos',
+    'Santander',
+    'Itaú',
+    'Bradesco',
+    'Caixa',
+    'Banco do Brasil',
+    'C6 Bank',
+    'PicPay',
+    'Outro',
+  ];

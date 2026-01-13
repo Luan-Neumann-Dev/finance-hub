@@ -77,7 +77,7 @@ export const SelectContent: React.FC<SelectContentProps> = ({ children, classNam
         className="fixed inset-0 z-40" 
         onClick={() => context.setOpen(false)}
       />
-      <div className={`absolute z-50 w-full mt-2 bg-card rounded-xl border shadow-lg overflow-hidden animate-scale-in ${className || ''}`}>
+      <div className={`absolute z-50 w-full mt-2 bg-card rounded-xl border shadow-lg max-h-50 overflow-y-auto animate-scale-in ${className || ''}`}>
         {children}
       </div>
     </>

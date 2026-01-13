@@ -18,7 +18,7 @@ const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
   { icon: Wallet, label: 'Receitas', path: '/incomes' },
   { icon: CreditCard, label: 'Despesas', path: '/expenses' },
-  { icon: PiggyBank, label: 'Porquinhos', path: '/porquinhos' },
+  { icon: PiggyBank, label: 'Porquinhos', path: '/piggys' },
   { icon: BarChart3, label: 'Relatórios', path: '/relatorios' },
 ];
 
