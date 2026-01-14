@@ -338,7 +338,11 @@ export const Expenses = () => {
                       </SelectTrigger>
                       <SelectContent>
                         {categories.map((category) => (
-                          <SelectItem key={category.id} value={category.id.toString()}>
+                          <SelectItem 
+                            key={category.id} 
+                            value={category.id.toString()}
+                            color={category.color}
+                          >
                             {category.name}
                           </SelectItem>
                         ))}

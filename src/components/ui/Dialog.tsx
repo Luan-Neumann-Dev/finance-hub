@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 
 interface DialogContextType {
   open: boolean;
@@ -132,9 +133,19 @@ interface DialogHeaderProps {
 }
 
 export const DialogHeader: React.FC<DialogHeaderProps> = ({ children }) => {
+  const context = useContext(DialogContext);
+  if (!context) throw new Error('DialogHeader must be used within Dialog');
+
   return (
-    <div className="mb-6">
+    <div className="flex items-center justify-between mb-6">
       {children}
+      <button
+        onClick={() => context.onOpenChange(false)}
+        className="rounded-lg p-1.5 hover:bg-accent transition-colors text-muted-foreground hover:text-foreground ml-auto"
+        type="button"
+      >
+        <X className="w-5 h-5" />
+      </button>
     </div>
   );
 };
@@ -148,5 +159,20 @@ export const DialogTitle: React.FC<DialogTitleProps> = ({ children }) => {
     <h2 className="text-xl font-bold text-foreground">
       {children}
     </h2>
+  );
+};
+
+export const DialogClose: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  const context = useContext(DialogContext);
+  if (!context) throw new Error('DialogClose must be used within Dialog');
+
+  return (
+    <button
+      onClick={() => context.onOpenChange(false)}
+      className="rounded-lg p-1.5 hover:bg-accent transition-colors"
+      type="button"
+    >
+      {children || <X className="w-5 h-5" />}
+    </button>
   );
 };
