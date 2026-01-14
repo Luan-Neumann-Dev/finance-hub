@@ -183,6 +183,11 @@
     color: hsl(var(--color-success));
   }
 
+  .text-warning {
+    color: #f59e0b;
+  }
+
+
   .text-success-foreground {
     color: hsl(var(--color-success-foreground));
   }
@@ -305,5 +310,18 @@
 
   .stagger-4 {
     animation-delay: 0.4s;
+  }
+
+  /* Max height utilities */
+  .max-h-\[200px\] {
+    max-height: 200px;
+  }
+
+  .max-h-\[80vh\] {
+    max-height: 80vh;
+  }
+
+  .overflow-y-auto {
+    overflow-y: auto;
   }
 }
