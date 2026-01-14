@@ -5,6 +5,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Incomes } from './pages/Incomes';
 import { Expenses } from './pages/Expenses';
 import { Piggys } from './pages/Piggys';
+import { Reports } from './pages/Reports';
 
 const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
   const { token, isLoading } = useAuth();
@@ -51,6 +52,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Piggys />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/reports"
+            element={
+              <PrivateRoute>
+                <Reports />
               </PrivateRoute>
             }
           />

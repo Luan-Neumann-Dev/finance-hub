@@ -19,7 +19,7 @@ const navItems = [
   { icon: Wallet, label: 'Receitas', path: '/incomes' },
   { icon: CreditCard, label: 'Despesas', path: '/expenses' },
   { icon: PiggyBank, label: 'Porquinhos', path: '/piggys' },
-  { icon: BarChart3, label: 'Relatórios', path: '/relatorios' },
+  { icon: BarChart3, label: 'Relatórios', path: '/reports' },
 ];
 
 export const Sidebar = () => {
