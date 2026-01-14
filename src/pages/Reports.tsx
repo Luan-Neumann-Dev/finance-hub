@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import {
   BarChart,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -19,7 +20,6 @@ import {
   Legend,
   LineChart,
   Line,
-  Bar,
 } from 'recharts';
 import { MainLayout } from '../components/layout/MainLayout';
 import { Button } from '../components/ui/Button';
@@ -275,9 +275,18 @@ export const Reports = () => {
                         name === 'receitas' ? 'Receitas' : 'Despesas',
                       ]}
                       contentStyle={{
-                        backgroundColor: 'hsl(var(--card))',
-                        border: '1px solid hsl(var(--border))',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e5e7eb',
                         borderRadius: '12px',
+                        padding: '12px',
+                      }}
+                      labelStyle={{
+                        color: '#374151',
+                        fontWeight: '600',
+                        marginBottom: '8px',
+                      }}
+                      itemStyle={{
+                        padding: '4px 0',
                       }}
                     />
                     <Legend
@@ -285,8 +294,8 @@ export const Reports = () => {
                         <span className="text-sm text-muted-foreground capitalize">{value}</span>
                       )}
                     />
-                    <Bar dataKey="receitas" fill="hsl(var(--success))" radius={[4, 4, 0, 0]} />
-                    <Bar dataKey="despesas" fill="hsl(var(--destructive))" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="receitas" fill="#10b981" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="despesas" fill="#ef4444" radius={[4, 4, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -320,17 +329,27 @@ export const Reports = () => {
                     <Tooltip
                       formatter={(value: number) => [formatCurrency(value), 'Saldo']}
                       contentStyle={{
-                        backgroundColor: 'hsl(var(--card))',
-                        border: '1px solid hsl(var(--border))',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e5e7eb',
                         borderRadius: '12px',
+                        padding: '12px',
+                      }}
+                      labelStyle={{
+                        color: '#374151',
+                        fontWeight: '600',
+                        marginBottom: '8px',
+                      }}
+                      itemStyle={{
+                        padding: '4px 0',
+                        color: '#FF7F00',
                       }}
                     />
                     <Line
                       type="monotone"
                       dataKey="saldo"
-                      stroke="hsl(var(--primary))"
+                      stroke="#FF7F00"
                       strokeWidth={3}
-                      dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2 }}
+                      dot={{ fill: '#FF7F00', strokeWidth: 2 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -372,9 +391,18 @@ export const Reports = () => {
                         <Tooltip
                           formatter={(value: number) => formatCurrency(value)}
                           contentStyle={{
-                            backgroundColor: 'hsl(var(--card))',
-                            border: '1px solid hsl(var(--border))',
+                            backgroundColor: '#ffffff',
+                            border: '1px solid #e5e7eb',
                             borderRadius: '12px',
+                            padding: '12px',
+                          }}
+                          labelStyle={{
+                            color: '#374151',
+                            fontWeight: '600',
+                            marginBottom: '8px',
+                          }}
+                          itemStyle={{
+                            padding: '4px 0',
                           }}
                         />
                         <Legend
